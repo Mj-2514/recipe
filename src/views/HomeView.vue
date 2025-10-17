@@ -32,6 +32,16 @@ import { useRouter } from 'vue-router'
 import { getMealById } from '@/api/mealApi.js'
 import RecipeCard from '@/components/RecipeCard.vue'
 import SearchBar from '@/components/SearchBar.vue'
+import { useMeta } from 'vue-meta'
+
+// ✅ Page-level meta for SEO
+useMeta({
+  title: 'Home - My Recipe App',
+  meta: [
+    { name: 'description', content: 'Discover amazing recipes and cooking ideas.' },
+    { name: 'keywords', content: 'recipes, cooking, food, vue, beginner' }
+  ]
+})
 
 const suggestions = ref([])
 const router = useRouter()

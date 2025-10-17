@@ -18,6 +18,7 @@ import { useRouter } from 'vue-router'
 import RecipeCard from '@/components/RecipeCard.vue'
 import { getRandomMeals } from '@/api/mealApi.js'
 
+
 const recipes = ref([])
 const router = useRouter()
 

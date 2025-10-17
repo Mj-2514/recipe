@@ -161,12 +161,24 @@
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { getMealById } from '@/api/mealApi.js'
+import { useMeta } from 'vue-meta'
 
 const route = useRoute()
 const router = useRouter()
 const recipe = ref(null)
 const ingredients = ref([])
-const history = ref("This culinary masterpiece has been passed down through generations, celebrated for its perfect balance of flavors and heartwarming appeal that brings people together around the table.")
+const history = ref(
+  "This culinary masterpiece has been passed down through generations, celebrated for its perfect balance of flavors and heartwarming appeal that brings people together around the table."
+)
+
+// Reactive SEO meta
+useMeta(() => ({
+  title: recipe.value ? `${recipe.value.strMeal} - My Recipe App` : 'Loading Recipe...',
+  meta: [
+    { name: 'description', content: recipe.value ? `Learn how to cook ${recipe.value.strMeal}` : 'Fetching recipe...' },
+    { name: 'keywords', content: recipe.value ? `recipe, cooking, ${recipe.value.strMeal}` : 'recipe, cooking' }
+  ]
+}))
 
 onMounted(async () => {
   try {
@@ -193,6 +205,9 @@ function goBack() {
   router.back()
 }
 </script>
+
+
+
 
 <style scoped>
 /* Custom scrollbar */

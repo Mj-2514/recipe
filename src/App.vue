@@ -30,5 +30,8 @@ import Contact from '@/views/Contact.vue'
 import SearchResults from './views/SearchResults.vue'
 import { useRoute } from 'vue-router'
 
+
+
+
 const $route = useRoute()
 </script>
