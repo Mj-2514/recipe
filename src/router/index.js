@@ -16,7 +16,17 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes: [
+    path: '/',
+    name: 'home',
+    component: HomeView
+  },
+  {
+    path: '/about',
+    name: 'about', 
+    component: AboutView
+  }
+]
 })
 
 // Make sure this is a default export
