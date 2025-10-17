@@ -24,10 +24,8 @@
     "autoprefixer": "^10.4.21",
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
-    "prerender-spa-plugin": "^3.4.0",
     "tailwindcss": "^4.1.14",
     "vite": "^7.1.7",
     "vite-plugin-vue-devtools": "^8.0.2"
-  },
-  "homepage": "https://Mj-2514.github.io/https://github.com/Mj-2514/recipe.git"
+  }
 }
